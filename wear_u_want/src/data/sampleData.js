@@ -33,25 +33,9 @@ export const sampleProducts = [
     reviews: 89,
     inStock: true
   },
+
   {
     id: 3,
-    name: "Floral Summer Dress",
-    price: 79.99,
-    category: "women",
-    image: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&h=400&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400&h=400&fit=crop"
-    ],
-    description: "Beautiful floral dress perfect for summer occasions. Lightweight and breathable fabric.",
-    sizes: ["XS", "S", "M", "L"],
-    colors: ["Floral Pink", "Floral Blue", "Floral Yellow"],
-    rating: 4.7,
-    reviews: 156,
-    inStock: true
-  },
-  {
-    id: 4,
     name: "Leather Handbag",
     price: 149.99,
     category: "accessories",
@@ -68,7 +52,7 @@ export const sampleProducts = [
     inStock: true
   },
   {
-    id: 5,
+    id: 4,
     name: "Running Sneakers",
     price: 119.99,
     category: "men",
@@ -84,25 +68,9 @@ export const sampleProducts = [
     reviews: 95,
     inStock: true
   },
+
   {
-    id: 6,
-    name: "Casual Blazer",
-    price: 139.99,
-    category: "women",
-    image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=400&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1573497161161-c3e73707e25c?w=400&h=400&fit=crop"
-    ],
-    description: "Stylish blazer perfect for office wear or casual outings.",
-    sizes: ["XS", "S", "M", "L", "XL"],
-    colors: ["Navy", "Black", "Gray"],
-    rating: 4.5,
-    reviews: 78,
-    inStock: true
-  },
-  {
-    id: 7,
+    id: 5,
     name: "Sunglasses",
     price: 59.99,
     category: "accessories",
@@ -119,7 +87,7 @@ export const sampleProducts = [
     inStock: true
   },
   {
-    id: 8,
+    id: 6,
     name: "Chino Pants",
     price: 69.99,
     category: "men",
