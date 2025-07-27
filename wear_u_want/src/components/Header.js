@@ -66,10 +66,6 @@ const Header = () => {
                     <span className="mr-2 text-sm">👔</span>
                     Men's Fashion
                   </Link>
-                  <Link to="/shop?category=women" className="flex items-center px-3 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600">
-                    <span className="mr-2 text-sm">👗</span>
-                    Women's Fashion
-                  </Link>
                   <Link to="/shop?category=accessories" className="flex items-center px-3 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-b-lg">
                     <span className="mr-2 text-sm">👜</span>
                     Accessories
@@ -207,9 +203,6 @@ const Header = () => {
               </Link>
               <Link to="/shop?category=men" className="block py-2 px-4 text-sm text-gray-700 hover:bg-purple-50" onClick={() => setIsMenuOpen(false)}>
                 👔 Men's Fashion
-              </Link>
-              <Link to="/shop?category=women" className="block py-2 px-4 text-sm text-gray-700 hover:bg-purple-50" onClick={() => setIsMenuOpen(false)}>
-                👗 Women's Fashion
               </Link>
               <Link to="/shop?category=accessories" className="block py-2 px-4 text-sm text-gray-700 hover:bg-purple-50" onClick={() => setIsMenuOpen(false)}>
                 👜 Accessories

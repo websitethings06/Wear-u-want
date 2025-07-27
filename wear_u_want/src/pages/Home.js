@@ -26,12 +26,7 @@ const Home = () => {
             >
               Shop Now
             </Link>
-            <Link
-              to="/shop?category=women"
-              className="border-2 border-white text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-purple-600 transition-colors"
-            >
-              Women's Collection
-            </Link>
+
           </div>
         </div>
       </section>
@@ -70,7 +65,7 @@ const Home = () => {
             <p className="text-gray-600">Discover our curated collections</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Link to="/shop?category=men" className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop"
@@ -81,19 +76,6 @@ const Home = () => {
               <div className="absolute bottom-4 left-4 text-white">
                 <h3 className="text-xl font-bold mb-1">Men's Collection</h3>
                 <p className="text-white/90 text-sm">Style that speaks volumes</p>
-              </div>
-            </Link>
-
-            <Link to="/shop?category=women" className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <img
-                src="https://images.unsplash.com/photo-1494790108755-2616c96d37fe?w=400&h=250&fit=crop"
-                alt="Women's Fashion"
-                className="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <h3 className="text-xl font-bold mb-1">Women's Collection</h3>
-                <p className="text-white/90 text-sm">Elegance redefined</p>
               </div>
             </Link>
 

@@ -79,7 +79,7 @@ const Shop = () => {
             <div className="mb-6">
               <h3 className="text-lg font-medium mb-3">Category</h3>
               <div className="space-y-2">
-                {['', 'men', 'women', 'accessories'].map(category => (
+                {['', 'men', 'accessories'].map(category => (
                   <label key={category} className="flex items-center">
                     <input
                       type="radio"
