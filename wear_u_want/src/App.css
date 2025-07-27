@@ -36,3 +36,77 @@
     transform: rotate(360deg);
   }
 }
+/* Remove default Create React App styles and add custom styles */
+
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: left; /* Changed from center */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Remove the spinning logo animation */
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+/* Remove media query that might be causing issues */
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    /* Removed animation */
+  }
+}
+
+/* Remove default header styles */
+.App-header {
+  /* Removed all default styles */
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* Add some custom utility classes */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
