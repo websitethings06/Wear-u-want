@@ -31,20 +31,12 @@ const Header = () => {
     { name: 'Trending Now', path: '/shop?category=trending' },
     { name: 'Western Wear', path: '/shop?category=western-wear' },
     { name: 'Ethnic Wear', path: '/shop?category=ethnic-wear' },
-    { name: 'Footwear', path: '/shop?category=footwear' },
-    { name: 'Fragrances', path: '/shop?category=fragrances' },
-    { name: 'Accessories', path: '/shop?category=accessories' },
   ];
 
   const westernWearSubcategories = [
     'Casual Shirts', 'T-Shirt', 'Polo Shirts', 'Sweatshirts', 'Jeans', 
     'Casual Trousers | Chinos', 'Blazers | Jackets', 'Formal Shirts', 
     'Formal Trousers', 'Joggers | Shorts', 'Lounge Wear | Sleep Wear', 'Underwear'
-  ];
-
-  const footwearSubcategories = [
-    'New In', 'View All', 'Casual Shoes', 'Formal Shoes', 
-    'Sneakers | Trainers', 'Flip Flops | Sandals | Slides', 'Boots'
   ];
 
   return (
@@ -160,7 +152,7 @@ const Header = () => {
                       onMouseLeave={() => setActiveCategory(null)}
                     >
                       <span>{category.name}</span>
-                      {(category.name === 'Western Wear' || category.name === 'Footwear') && (
+                      {category.name === 'Western Wear' && (
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
                         </svg>
@@ -182,30 +174,6 @@ const Header = () => {
                                 key={item}
                                 to={`/shop?category=${item.toLowerCase().replace(/\s+/g, '-').replace(/\|/g, '-')}`}
                                 className="text-base text-gray-600 hover:text-purple-600 transition-colors py-2 hover:bg-purple-50 rounded px-2"
-                              >
-                                {item}
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Footwear Dropdown */}
-                    {category.name === 'Footwear' && activeCategory === 'Footwear' && (
-                      <div 
-                        className="absolute top-full left-0 w-80 bg-white shadow-xl border-t-2 border-pink-500 rounded-lg"
-                        onMouseEnter={() => setActiveCategory('Footwear')}
-                        onMouseLeave={() => setActiveCategory(null)}
-                      >
-                        <div className="p-4">
-                          <h3 className="font-bold text-gray-800 mb-3 text-pink-600 text-lg">Footwear</h3>
-                          <div className="grid grid-cols-2 gap-2">
-                            {footwearSubcategories.map((item) => (
-                              <Link 
-                                key={item}
-                                to={`/shop?category=${item.toLowerCase().replace(/\s+/g, '-').replace(/\|/g, '-')}`}
-                                className="text-base text-gray-600 hover:text-pink-600 transition-colors py-2 hover:bg-pink-50 rounded px-2"
                               >
                                 {item}
                               </Link>

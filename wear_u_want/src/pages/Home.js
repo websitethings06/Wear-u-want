@@ -1,11 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ProductCard from '../components/ProductCard';
-import { sampleProducts } from '../data/sampleData';
 
 const Home = () => {
-  const featuredProducts = sampleProducts.slice(0, 8);
-
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -38,7 +34,7 @@ const Home = () => {
             <div className="group cursor-pointer">
               <div className="relative overflow-hidden rounded-lg">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop"
+                  src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=500&fit=crop"
                   alt="Casual Shirts"
                   className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -83,7 +79,7 @@ const Home = () => {
             <div className="group cursor-pointer">
               <div className="relative overflow-hidden rounded-lg">
                 <img
-                  src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=500&fit=crop"
+                  src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400&h=500&fit=crop"
                   alt="Formal Shirts"
                   className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -109,26 +105,11 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Footwear */}
-            <div className="group cursor-pointer">
-              <div className="relative overflow-hidden rounded-lg">
-                <img
-                  src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=500&fit=crop"
-                  alt="Footwear"
-                  className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-300"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="text-xl font-bold">FOOTWEAR</h3>
-                </div>
-              </div>
-            </div>
-
             {/* Blazers & Jackets */}
             <div className="group cursor-pointer">
               <div className="relative overflow-hidden rounded-lg">
                 <img
-                  src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=500&fit=crop"
+                  src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&h=500&fit=crop"
                   alt="Blazers & Jackets"
                   className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -138,61 +119,6 @@ const Home = () => {
                 </div>
               </div>
             </div>
-
-            {/* Accessories */}
-            <div className="group cursor-pointer">
-              <div className="relative overflow-hidden rounded-lg">
-                <img
-                  src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=500&fit=crop"
-                  alt="Accessories"
-                  className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-300"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="text-xl font-bold">ACCESSORIES</h3>
-                </div>
-              </div>
-            </div>
-
-            {/* Fragrances */}
-            <div className="group cursor-pointer">
-              <div className="relative overflow-hidden rounded-lg">
-                <img
-                  src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400&h=500&fit=crop"
-                  alt="Fragrances"
-                  className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-300"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="text-xl font-bold">FRAGRANCES</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Products */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Featured Products</h2>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.map(product => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              to="/shop"
-              className="bg-gray-900 text-white px-8 py-3 rounded-md font-medium hover:bg-gray-800 transition-colors inline-flex items-center gap-2"
-            >
-              View All Products
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
           </div>
         </div>
       </section>
