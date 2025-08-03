@@ -1,42 +1,38 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useCart } from '../context/CartContext';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [activeCategory, setActiveCategory] = useState(null);
+  const { isAuthenticated, user, logout } = useAuth();
   const { getCartItemsCount } = useCart();
-  const { user, isAuthenticated, logout } = useAuth();
-  const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const [activeCategory, setActiveCategory] = useState(null);
 
   const handleLogout = () => {
     logout();
-    navigate('/');
     setIsUserMenuOpen(false);
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      navigate(`/shop?search=${searchQuery}`);
-      setSearchQuery('');
-    }
-  };
-
   const categories = [
-    { name: 'New In', path: '/shop?category=new-in' },
-    { name: 'Trending Now', path: '/shop?category=trending' },
-    { name: 'Western Wear', path: '/shop?category=western-wear' },
-    { name: 'Ethnic Wear', path: '/shop?category=ethnic-wear' },
+    { name: 'New In' },
+    { name: 'Trending Now' },
+    { name: 'Western Wear' },
+    { name: 'Ethnic Wear' },
+    { name: 'Footwear' },
+    { name: 'Fragrances' },
+    { name: 'Accessories' }
   ];
 
   const westernWearSubcategories = [
-    'Casual Shirts', 'T-Shirt', 'Polo Shirts', 'Sweatshirts', 'Jeans', 
-    'Casual Trousers | Chinos', 'Blazers | Jackets', 'Formal Shirts', 
-    'Formal Trousers', 'Joggers | Shorts', 'Lounge Wear | Sleep Wear', 'Underwear'
+    'T-Shirts',
+    'Casual Shirts',
+    'Formal Shirts',
+    'Jeans',
+    'Trousers',
+    'Shorts',
+    'Blazers & Jackets'
   ];
 
   return (
@@ -62,8 +58,8 @@ const Header = () => {
             </Link>
 
             {/* Search Bar */}
-            <div className="flex-1 max-w-md mx-8">
-              <form onSubmit={handleSearch} className="relative">
+            <div className="flex-1 max-w-2xl mx-8">
+              <form className="relative">
                 <input
                   type="text"
                   value={searchQuery}
@@ -139,60 +135,60 @@ const Header = () => {
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Navigation Bar */}
-          <nav className="border-t border-white/20">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-8">
-                {categories.map((category) => (
-                  <div key={category.name} className="relative group">
-                    <button
-                      className="py-5 text-base font-semibold text-white hover:text-yellow-300 transition-colors flex items-center space-x-1 border-b-2 border-transparent hover:border-yellow-300"
-                      onMouseEnter={() => setActiveCategory(category.name)}
+        {/* Navigation */}
+        <nav className="border-t border-white/20">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-8">
+              {categories.map((category) => (
+                <div key={category.name} className="relative group">
+                  <button
+                    className="py-5 text-base font-semibold text-white hover:text-yellow-300 transition-colors flex items-center space-x-1 border-b-2 border-transparent hover:border-yellow-300"
+                    onMouseEnter={() => setActiveCategory(category.name)}
+                    onMouseLeave={() => setActiveCategory(null)}
+                  >
+                    <span>{category.name}</span>
+                    {category.name === 'Western Wear' && (
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                      </svg>
+                    )}
+                  </button>
+
+                  {/* Western Wear Dropdown */}
+                  {category.name === 'Western Wear' && activeCategory === 'Western Wear' && (
+                    <div 
+                      className="absolute top-full left-0 w-80 bg-white shadow-xl border-t-2 border-purple-500 rounded-lg"
+                      onMouseEnter={() => setActiveCategory('Western Wear')}
                       onMouseLeave={() => setActiveCategory(null)}
                     >
-                      <span>{category.name}</span>
-                      {category.name === 'Western Wear' && (
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-                        </svg>
-                      )}
-                    </button>
-                    
-                    {/* Western Wear Dropdown */}
-                    {category.name === 'Western Wear' && activeCategory === 'Western Wear' && (
-                      <div 
-                        className="absolute top-full left-0 w-80 bg-white shadow-xl border-t-2 border-purple-500 rounded-lg"
-                        onMouseEnter={() => setActiveCategory('Western Wear')}
-                        onMouseLeave={() => setActiveCategory(null)}
-                      >
-                        <div className="p-4">
-                          <h3 className="font-bold text-gray-800 mb-3 text-purple-600 text-lg">Western Wear</h3>
-                          <div className="grid grid-cols-2 gap-2">
-                            {westernWearSubcategories.map((item) => (
-                              <Link 
-                                key={item}
-                                to={`/shop?category=${item.toLowerCase().replace(/\s+/g, '-').replace(/\|/g, '-')}`}
-                                className="text-base text-gray-600 hover:text-purple-600 transition-colors py-2 hover:bg-purple-50 rounded px-2"
-                              >
-                                {item}
-                              </Link>
-                            ))}
-                          </div>
+                      <div className="p-4">
+                        <h3 className="font-bold text-gray-800 mb-3 text-purple-600 text-lg">Western Wear</h3>
+                        <div className="grid grid-cols-2 gap-2">
+                          {westernWearSubcategories.map((item) => (
+                            <Link 
+                              key={item}
+                              to={`/shop?category=${item.toLowerCase().replace(/\s+/g, '-').replace(/\|/g, '-')}`}
+                              className="text-base text-gray-600 hover:text-purple-600 transition-colors py-2 hover:bg-purple-50 rounded px-2"
+                            >
+                              {item}
+                            </Link>
+                          ))}
                         </div>
                       </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-
-              {/* View All */}
-              <button className="py-5 text-base font-semibold text-white hover:text-yellow-300 transition-colors border-b-2 border-transparent hover:border-yellow-300">
-                View All
-              </button>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
-          </nav>
-        </div>
+
+            {/* View All */}
+            <button className="py-5 text-base font-semibold text-white hover:text-yellow-300 transition-colors border-b-2 border-transparent hover:border-yellow-300">
+              View All
+            </button>
+          </div>
+        </nav>
       </header>
     </>
   );

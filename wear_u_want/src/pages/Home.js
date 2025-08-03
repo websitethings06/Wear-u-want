@@ -106,7 +106,7 @@ const Home = () => {
       }
     }, 5000);
     return () => clearInterval(timer);
-  }, [isSliderPaused]);
+  }, [isSliderPaused, heroSlides.length]);
 
   useEffect(() => {
     const handleScroll = () => {
