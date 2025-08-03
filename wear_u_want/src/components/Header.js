@@ -41,7 +41,7 @@ const Header = () => {
 
   return (
     <>
-      {/* Main Header */}
+      {/* Main Headers */}
       <header className="bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 shadow-lg sticky top-0 z-50">
         <div className="container mx-auto px-4">
           {/* Top Bar */}
@@ -54,6 +54,7 @@ const Header = () => {
                 </span>
               </div>
               <div>
+                
                 <span className="text-3xl font-black text-white tracking-wider" style={{ fontFamily: 'Georgia, serif' }}>
                   Wear U Want
                 </span>
